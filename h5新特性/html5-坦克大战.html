@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html5-坦克大战</title>
+</head>
+<body>
+<canvas id="tankMap" width="400px" height="300px" style="background-color: #000000"></canvas>
+</body>
+
+<script>
+    var casvas1 = document.getElementById("tankMap") ;
+    let heroX = 80, heroY = 80;
+    //得到2d绘图上下文
+    let cxt = casvas1.getContext("2d");
+    //设置颜色
+    cxt.fillStyle = "#BA9658"
+    //画左边的矩形
+    cxt.fillRect(heroX,heroY,5,30);
+    //画右边矩形
+    cxt.fillRect(heroX+17,heroY,5,30);
+    //画中间的矩形
+    cxt.fillRect(heroX+6,heroY+5,10,20);
+    //画坦克的盖子
+    cxt.fillStyle = "#FEF26E";
+    cxt.arc(heroX+11,heroY+15,5,0,360,true);
+    cxt.fill()
+    //画炮筒
+    cxt.strokeStyle = "#FEF26E"
+    cxt.lineWidth=1.5;
+    cxt.beginPath();
+    cxt.moveTo(heroX+11,heroY+15);
+    cxt.lineTo(heroX+11,heroY);
+    cxt.closePath();
+    cxt.stroke();
+    window.onkeydown = function (e) {
+        e=e || window.event;
+        var i = 10;
+        console.log(e.which);
+        if(e.which == 39){
+        }
+    }
+
+</script>
+</html>
